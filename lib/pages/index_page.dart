@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter/material.dart';
 import '../config/index.dart';
@@ -38,6 +39,10 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(
+      width: 750,
+      height: 1334,
+    )..init(context);
     return Provide<CurrentIndexProvide>(
       builder: (context, child, val) {
         //取到当前状态值
