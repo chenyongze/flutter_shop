@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-08 07:19:50
- * @LastEditTime: 2020-06-08 07:25:23
+ * @LastEditTime: 2020-06-08 07:38:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /express_node_server/router/user.js
@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
         console.log(results);
         // res.render('index', { title: 'Express11' });
         res.json({
-            'code': 0,
+            'code': 8,
             'data': results,
         })
     })
