@@ -55,6 +55,8 @@ class IndexPage extends StatelessWidget {
             currentIndex: currentIndex,
             items: bottomTabs,
             onTap: (index) {
+              print(index);
+              print('点击：：：');
               Provide.value<CurrentIndexProvide>(context).changeIndex(index);
             },
           ),
