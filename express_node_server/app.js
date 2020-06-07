@@ -14,6 +14,8 @@ app.use(function (req, res, next) {
     next();
 })
 
+app.use("/getTestData", require("./router/test"));
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
