@@ -33,6 +33,47 @@ router.post("/", (req, res) => {
             'category': [
                 {
                     "image": base_url + "180.png",
+                    "firstCategoryName": "001",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "002",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "003",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "004",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "005",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "006",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "007",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "008",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "009",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "010",
+                },
+                {
+                    "image": base_url + "180.png",
+                    "firstCategoryName": "011",
                 },
             ],
             'recomend': [
