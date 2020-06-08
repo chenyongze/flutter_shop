@@ -59,7 +59,6 @@ class _HomePageState extends State<HomePage>
               List<Map> floor1 = (data['data']['floor1'] as List).cast();
               // 广告
               Map fp1 = data['data']['floor1Pic'];
-              String title = data['data']['title'];
 
               print(swiperDataList);
               return EasyRefresh(
@@ -239,6 +238,7 @@ class TopNavigator extends StatelessWidget {
           Image.network(
             item['image'],
             width: ScreenUtil().setWidth(95),
+            height: ScreenUtil().setHeight(65),
           ),
           Text(item['firstCategoryName'])
         ],

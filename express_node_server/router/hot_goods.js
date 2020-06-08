@@ -6,7 +6,7 @@ const router = express();
 
 const config = require("./config")
 
-const base_url = "http://" + config.IP + ":" + config.PORT + "/images/ad/";
+const common_base_url = "http://" + config.IP + ":" + config.PORT + "/images/";
 
 router.post("/", (req, res) => {
 
@@ -18,56 +18,56 @@ router.post("/", (req, res) => {
         "data": [
             {
                 "name": "商品001",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/001.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品002",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/002.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品003",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/003.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品004",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/004.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100.89,
             },
             {
                 "name": "商品005",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/005.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品006",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/006.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品007",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/007.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,
             },
             {
                 "name": "商品008",
-                "image": base_url + "180.png",
+                "image": common_base_url + "/goods/008.jpeg",
                 "presentPrice": 98.78,
                 "goodsId": 001,
                 "oriPrice": 100,

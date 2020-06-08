@@ -7,6 +7,7 @@ const router = express();
 const config = require("./config")
 
 const base_url = "http://" + config.IP + ":" + config.PORT + "/images/ad/";
+const common_base_url = "http://" + config.IP + ":" + config.PORT + "/images/";
 
 router.post("/", (req, res) => {
 
@@ -18,57 +19,54 @@ router.post("/", (req, res) => {
         "data": {
             "slides": [
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/swiper/001.jpeg",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/swiper/002.jpeg",
                 },
                 {
-                    "image": base_url + "180.png",
-                },
-                {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/swiper/003.jpeg",
                 },
             ],
             'category': [
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/001.jpg",
                     "firstCategoryName": "001",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/002.jpg",
                     "firstCategoryName": "002",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/003.jpeg",
                     "firstCategoryName": "003",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/004.jpg",
                     "firstCategoryName": "004",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/005.jpg",
                     "firstCategoryName": "005",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/006.jpg",
                     "firstCategoryName": "006",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/007.jpg",
                     "firstCategoryName": "007",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/008.jpeg",
                     "firstCategoryName": "008",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/009.jpg",
                     "firstCategoryName": "009",
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "category/010.jpg",
                     "firstCategoryName": "010",
                 },
                 {
@@ -79,56 +77,56 @@ router.post("/", (req, res) => {
             'recommend': [
                 {
                     "name": "商品001",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/001.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品002",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/002.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品003",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/003.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品004",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/004.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100.89,
                 },
                 {
                     "name": "商品005",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/005.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品006",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/006.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品007",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/007.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
                 },
                 {
                     "name": "商品008",
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "/goods/008.jpeg",
                     "presentPrice": 98.78,
                     "goodsId": 001,
                     "oriPrice": 100,
@@ -136,29 +134,29 @@ router.post("/", (req, res) => {
             ],
             'floor1': [
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "floor/001.jpeg",
                     "goodsId": 001,
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "floor/002.jpeg",
                     "goodsId": 002,
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "floor/003.jpeg",
                     "goodsId": 003,
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "floor/004.jpeg",
                     "goodsId": 004,
                 },
                 {
-                    "image": base_url + "180.png",
+                    "image": common_base_url + "floor/005.jpeg",
                     "goodsId": 005,
                 },
 
             ],
             'floor1Pic': {
-                "pic_address": base_url + "180.png",
+                "pic_address": common_base_url + "ad/001.jpeg",
                 "to_place": 4,
             },
             'title': '这是一个首页',
