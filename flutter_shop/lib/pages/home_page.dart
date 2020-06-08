@@ -70,18 +70,11 @@ class _HomePageState extends State<HomePage>
                 ),
                 child: ListView(
                   children: <Widget>[
-                    SwiperDiy(
-                      swiperDataList: swiperDataList,
-                    ),
-                    TopNavigator(
-                      navigatorList: navigatorList,
-                    ),
-                    RecommendUI(
-                      recommendList: recommendList,
-                    ),
-                    FloorPic(
-                      floorPic: fp1,
-                    ),
+                    SwiperDiy(swiperDataList: swiperDataList),
+                    TopNavigator(navigatorList: navigatorList),
+                    RecommendUI(recommendList: recommendList),
+                    FloorPic(floorPic: fp1),
+                    Floor(floor: floor1)
                   ],
                 ),
                 loadMore: () async {
@@ -279,6 +272,115 @@ class FloorPic extends StatelessWidget {
         onTap: () {
           print("click floor pic area");
         },
+      ),
+    );
+  }
+}
+
+// 商品推荐下层
+class Floor extends StatelessWidget {
+  final List<Map> floor;
+  const Floor({Key key, this.floor}) : super(key: key);
+
+  void jumpDetail(context, int goodsId) {
+    // 跳转商品详情
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double width = ScreenUtil.getInstance().width;
+    return Container(
+      child: Row(
+        children: <Widget>[
+          // 左侧商品
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                // 左上角大图
+                Container(
+                  padding: EdgeInsets.only(
+                    top: 4,
+                  ),
+                  height: ScreenUtil().setHeight(400),
+                  child: InkWell(
+                    child: Image.network(
+                      floor[0]['image'],
+                      fit: BoxFit.cover,
+                    ),
+                    onTap: () {
+                      jumpDetail(context, floor[0]['goodsId']);
+                    },
+                  ),
+                ),
+                // 左下角小图
+                Container(
+                  padding: EdgeInsets.only(top: 1, right: 1),
+                  height: ScreenUtil().setHeight(200),
+                  child: InkWell(
+                    child: Image.network(
+                      floor[1]['image'],
+                      fit: BoxFit.cover,
+                    ),
+                    onTap: () {
+                      jumpDetail(context, floor[1]['goodsId']);
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // 右侧商品
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                // 右上图
+                Container(
+                  padding: EdgeInsets.only(top: 4, left: 1),
+                  height: ScreenUtil().setHeight(200),
+                  child: InkWell(
+                    child: Image.network(
+                      floor[2]['image'],
+                      fit: BoxFit.contain,
+                    ),
+                    onTap: () {
+                      jumpDetail(context, floor[2]['goodsId']);
+                    },
+                  ),
+                ),
+                // 右中图
+                Container(
+                  padding: EdgeInsets.only(top: 1, left: 1),
+                  height: ScreenUtil().setHeight(200),
+                  child: InkWell(
+                    child: Image.network(
+                      floor[3]['image'],
+                      fit: BoxFit.contain,
+                    ),
+                    onTap: () {
+                      jumpDetail(context, floor[3]['goodsId']);
+                    },
+                  ),
+                ),
+                // 右下图
+                Container(
+                  padding: EdgeInsets.only(top: 1, left: 1),
+                  height: ScreenUtil().setHeight(200),
+                  child: InkWell(
+                    child: Image.network(
+                      floor[4]['image'],
+                      fit: BoxFit.contain,
+                    ),
+                    onTap: () {
+                      jumpDetail(context, floor[4]['goodsId']);
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisSize: MainAxisSize.min,
       ),
     );
   }

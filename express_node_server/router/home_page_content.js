@@ -135,6 +135,26 @@ router.post("/", (req, res) => {
                 },
             ],
             'floor1': [
+                {
+                    "image": base_url + "180.png",
+                    "goodsId": 001,
+                },
+                {
+                    "image": base_url + "180.png",
+                    "goodsId": 002,
+                },
+                {
+                    "image": base_url + "180.png",
+                    "goodsId": 003,
+                },
+                {
+                    "image": base_url + "180.png",
+                    "goodsId": 004,
+                },
+                {
+                    "image": base_url + "180.png",
+                    "goodsId": 005,
+                },
 
             ],
             'floor1Pic': {
