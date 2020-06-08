@@ -1,4 +1,6 @@
-const base_url = 'http://127.0.0.1:3000/';
+// const base_url = 'http://127.0.0.1:3000/';
+// online
+const base_url = 'http://39.100.22.139:3000/';
 
 const servicePath = {
   'homePageContent': base_url + 'homePageContent',
