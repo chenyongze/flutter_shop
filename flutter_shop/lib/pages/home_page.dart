@@ -12,7 +12,18 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
+  // 防止刷新，保持当前状态
+  @override
+  bool get wantKeepAlive => true;
+  
+  @override
+  void initState() { 
+    super.initState();
+    print("首页刷新...");
+  }
+
   GlobalKey<RefreshFooterState> _footerKey =
       new GlobalKey<RefreshFooterState>();
 
