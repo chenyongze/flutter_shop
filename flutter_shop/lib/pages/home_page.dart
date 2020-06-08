@@ -79,9 +79,9 @@ class _HomePageState extends State<HomePage>
                     RecommendUI(
                       recommendList: recommendList,
                     ),
-                    // Center(
-                    //   child: Text(title),
-                    // ),
+                    FloorPic(
+                      floorPic: fp1,
+                    ),
                   ],
                 ),
                 loadMore: () async {
@@ -256,6 +256,27 @@ class RecommendUI extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// 推荐中间广告位
+class FloorPic extends StatelessWidget {
+  final Map floorPic;
+  const FloorPic({Key key, this.floorPic}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 10.0),
+      child: InkWell(
+        child: Image.network(
+          floorPic['pic_address'],
+          fit: BoxFit.cover,
+          height: ScreenUtil().setHeight(100),
+        ),
+        onTap: () {},
       ),
     );
   }
