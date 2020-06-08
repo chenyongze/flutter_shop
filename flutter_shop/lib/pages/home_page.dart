@@ -28,31 +28,48 @@ class _HomePageState extends State<HomePage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var data = json.decode(snapshot.data.toString());
-              // var code  = data.code;
-              print(data);
-            } else {
-              print('no data');
-            }
+              // 轮播
+              List<Map> swiperDataList =
+                  (data['data']['slides'] as List).cast();
+              // 分类
+              List<Map> category = (data['data']['category'] as List).cast();
+              // 推荐
+              List<Map> recomendList =
+                  (data['data']['recomend'] as List).cast();
+              // 楼层
+              List<Map> floor1 = (data['data']['floor1'] as List).cast();
+              // 广告
+              Map fp1 = data['data']['floor1Pic'];
+              String title = data['data']['title'];
 
-            print('home ...start');
-            return EasyRefresh(
-              refreshFooter: ClassicsFooter(
-                key: _footerKey,
-                bgColor: Colors.white,
-                textColor: KColor.refreshTextColor,
-                moreInfoColor: KColor.refreshTextColor,
-                showMore: true,
-                noMoreText: '',
-                moreInfo: KString.loading,
-                loadReadyText: KString.loadReadyText,
-              ),
-              child: ListView(
-                children: <Widget>[],
-              ),
-              loadMore: () async {
-                print("开始加载更多");
-              },
-            );
+              print(swiperDataList);
+              return EasyRefresh(
+                refreshFooter: ClassicsFooter(
+                  key: _footerKey,
+                  bgColor: Colors.white,
+                  textColor: KColor.refreshTextColor,
+                  moreInfoColor: KColor.refreshTextColor,
+                  showMore: true,
+                  noMoreText: '',
+                  moreInfo: KString.loading,
+                  loadReadyText: KString.loadReadyText,
+                ),
+                child: ListView(
+                  children: <Widget>[
+                    Center(
+                      child: Text(title),
+                    ),
+                  ],
+                ),
+                loadMore: () async {
+                  print("开始加载更多");
+                },
+              );
+            } else {
+              return Center(
+                child: Text('加载中'),
+              );
+            }
           }),
     );
   }

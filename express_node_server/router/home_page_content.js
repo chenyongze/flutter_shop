@@ -15,20 +15,39 @@ router.post("/", (req, res) => {
     var data = {
         "code": 0,
         "message": "success",
-        "data": [
-            {
-                "image": base_url + "180.png",
+        "data": {
+            "slides": [
+                {
+                    "image": base_url + "180.png",
+                },
+                {
+                    "image": base_url + "180.png",
+                },
+                {
+                    "image": base_url + "180.png",
+                },
+                {
+                    "image": base_url + "180.png",
+                },
+            ],
+            'category': [
+                {
+                    "image": base_url + "180.png",
+                },
+            ],
+            'recomend': [
+                {
+                    "image": base_url + "180.png",
+                },
+            ],
+            'floor1': [
+
+            ],
+            'floor1Pic': {
+
             },
-            {
-                "image": base_url + "180.png",
-            },
-            {
-                "image": base_url + "180.png",
-            },
-            {
-                "image": base_url + "180.png",
-            },
-        ]
+            'title': '这是一个首页',
+        },
     };
 
     res.send(data);
