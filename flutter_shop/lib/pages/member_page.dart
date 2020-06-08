@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../config/index.dart';
 
 class MemberPage extends StatefulWidget {
   // MemberPage({Key key}) : super(key: key);
@@ -10,8 +11,12 @@ class MemberPage extends StatefulWidget {
 class _MemberPageState extends State<MemberPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('个人中心'),
+    return Scaffold(
+      appBar: AppBar(title: Text(KString.memberTitle)),
+      body: Container(
+          child: Column(
+        children: [],
+      )),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../config/index.dart';
 
 class CartPage extends StatefulWidget {
   // CartPage({Key key}) : super(key: key);
@@ -10,8 +11,12 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('购物车'),
+    return Scaffold(
+      appBar: AppBar(title: Text(KString.shoppingCartTitle)),
+      body: Container(
+          child: Column(
+        children: [],
+      )),
     );
   }
 }

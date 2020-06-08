@@ -16,9 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
-  // 防止刷新，保持当前状态
   @override
   bool get wantKeepAlive => true;
+
+  //火爆专区分页
+  int page = 1;
+  // 火爆专区列表数据
+  List<Map> hotGoodsList = [];
+  // 防止刷新，保持当前状态
 
   @override
   void initState() {
@@ -74,11 +79,13 @@ class _HomePageState extends State<HomePage>
                     TopNavigator(navigatorList: navigatorList),
                     RecommendUI(recommendList: recommendList),
                     FloorPic(floorPic: fp1),
-                    Floor(floor: floor1)
+                    Floor(floor: floor1),
+                    _hotGoods(),
                   ],
                 ),
                 loadMore: () async {
                   print("开始加载更多");
+                  _getHotGoods();
                 },
               );
             } else {
@@ -87,6 +94,101 @@ class _HomePageState extends State<HomePage>
               );
             }
           }),
+    );
+  }
+
+  void _getHotGoods() {
+    var formPage = {'page': page};
+    request('getHotGoods', formData: formPage).then((value) {
+      var data = json.decode(value.toString());
+      print(data);
+      List<Map> newGoodsList = (data['data'] as List).cast();
+      // 设置火爆专区数据列表
+      setState(() {
+        hotGoodsList.addAll(newGoodsList);
+        page++;
+      });
+    });
+  }
+
+  // 火爆专区标题
+  Widget hotTitle = Container(
+    margin: EdgeInsets.only(top: 10.0),
+    padding: EdgeInsets.all(5.0),
+    alignment: Alignment.center,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      border: Border(
+        bottom: BorderSide(width: 0.5, color: KColor.defaultBorderColor),
+      ),
+    ),
+    child: Text(KString.hotGoodsTitle,
+        style: TextStyle(color: KColor.homeSubTitleTextColor)),
+  );
+
+  // 火爆专区子项目
+  Widget _wrapList() {
+    if (hotGoodsList.length != 0) {
+      List<Widget> listWidget = hotGoodsList.map((val) {
+        return InkWell(
+          onTap: () {},
+          child: Container(
+            width: ScreenUtil().setWidth(372),
+            color: Colors.white,
+            padding: EdgeInsets.all(5.0),
+            margin: EdgeInsets.only(bottom: 3.0),
+            child: Column(
+              children: <Widget>[
+                Image.network(
+                  val['image'],
+                  width: ScreenUtil().setWidth(375),
+                  height: ScreenUtil().setHeight(200),
+                  fit: BoxFit.cover,
+                ),
+                Text(
+                  val['name'],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: ScreenUtil().setSp(26)),
+                ),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      '￥${val['presentPrice']}',
+                      style: TextStyle(
+                        color: KColor.presentPriceColor,
+                      ),
+                    ),
+                    Text(
+                      '￥${val['oriPrice']}',
+                      style: KFont.oriPriceStyle,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      }).toList();
+
+      return Wrap(
+        spacing: 2,
+        children: listWidget,
+      );
+    } else {
+      return Text('');
+    }
+  }
+
+  // 火爆专区组合
+  Widget _hotGoods() {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          hotTitle,
+          _wrapList(),
+        ],
+      ),
     );
   }
 }
