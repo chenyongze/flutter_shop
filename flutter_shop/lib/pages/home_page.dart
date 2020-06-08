@@ -276,7 +276,9 @@ class FloorPic extends StatelessWidget {
           fit: BoxFit.cover,
           height: ScreenUtil().setHeight(100),
         ),
-        onTap: () {},
+        onTap: () {
+          print("click floor pic area");
+        },
       ),
     );
   }
