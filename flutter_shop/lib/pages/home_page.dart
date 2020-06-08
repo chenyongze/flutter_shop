@@ -4,6 +4,8 @@ import '../config/index.dart';
 import '../service/http_service.dart';
 
 import 'dart:convert';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   // HomePage({Key key}) : super(key: key);
@@ -17,9 +19,9 @@ class _HomePageState extends State<HomePage>
   // 防止刷新，保持当前状态
   @override
   bool get wantKeepAlive => true;
-  
+
   @override
-  void initState() { 
+  void initState() {
     super.initState();
     print("首页刷新...");
   }
@@ -67,6 +69,9 @@ class _HomePageState extends State<HomePage>
                 ),
                 child: ListView(
                   children: <Widget>[
+                    SwiperDiy(
+                      swiperDataList: swiperDataList,
+                    ),
                     Center(
                       child: Text(title),
                     ),
@@ -82,6 +87,35 @@ class _HomePageState extends State<HomePage>
               );
             }
           }),
+    );
+  }
+}
+
+// 首页轮播组件
+class SwiperDiy extends StatelessWidget {
+  final List swiperDataList;
+  const SwiperDiy({Key key, this.swiperDataList}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      height: ScreenUtil().setHeight(333),
+      width: ScreenUtil().setWidth(750),
+      child: Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+              onTap: () {},
+              child: Image.network(
+                "${swiperDataList[index]['image']}",
+                fit: BoxFit.cover,
+              ));
+        },
+        // 图片数量
+        itemCount: swiperDataList.length,
+        pagination: SwiperPagination(),
+        autoplay: true,
+      ),
     );
   }
 }
