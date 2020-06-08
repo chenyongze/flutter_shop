@@ -76,9 +76,62 @@ router.post("/", (req, res) => {
                     "firstCategoryName": "011",
                 },
             ],
-            'recomend': [
+            'recommend': [
                 {
+                    "name": "商品001",
                     "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品002",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品003",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品004",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品005",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品006",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品007",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
+                },
+                {
+                    "name": "商品008",
+                    "image": base_url + "180.png",
+                    "presentPrice": 98.78,
+                    "goodsId": 001,
+                    "oriPirce": 100,
                 },
             ],
             'floor1': [
