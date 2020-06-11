@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_easyrefresh/material_header.dart';
+import 'package:flutter_easyrefresh/material_footer.dart';
 import '../config/index.dart';
 import '../service/http_service.dart';
 
@@ -31,8 +33,8 @@ class _HomePageState extends State<HomePage>
     print("首页刷新...");
   }
 
-  GlobalKey<RefreshFooterState> _footerKey =
-      new GlobalKey<RefreshFooterState>();
+  // GlobalKey<RefreshFooterState> _footerKey =
+  //     new GlobalKey<RefreshFooterState>();
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +64,7 @@ class _HomePageState extends State<HomePage>
 
               print(swiperDataList);
               return EasyRefresh(
-                refreshFooter: ClassicsFooter(
-                  key: _footerKey,
-                  bgColor: Colors.white,
-                  textColor: KColor.refreshTextColor,
-                  moreInfoColor: KColor.refreshTextColor,
-                  showMore: true,
-                  noMoreText: '',
-                  moreInfo: KString.loading,
-                  loadReadyText: KString.loadReadyText,
-                ),
+                footer: MaterialFooter(),
                 child: ListView(
                   children: <Widget>[
                     SwiperDiy(swiperDataList: swiperDataList),
@@ -82,7 +75,7 @@ class _HomePageState extends State<HomePage>
                     _hotGoods(),
                   ],
                 ),
-                loadMore: () async {
+                onLoad: () async {
                   print("开始加载更多");
                   _getHotGoods();
                 },
@@ -390,7 +383,7 @@ class Floor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = ScreenUtil.getInstance().width;
+    double width = ScreenUtil.screenWidth;
     return Container(
       child: Row(
         children: <Widget>[
