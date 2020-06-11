@@ -79,6 +79,9 @@ class _HomePageState extends State<HomePage>
                   print("开始加载更多");
                   _getHotGoods();
                 },
+                // onRefresh: () async {
+                //   print("onRefresh....");
+                // },
               );
             } else {
               return Center(
