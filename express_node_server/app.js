@@ -20,6 +20,7 @@ app.use(function (req, res, next) {
 app.use("/getTestData", require("./router/test"));
 app.use("/getHotGoods", require("./router/hot_goods"));
 app.use("/homePageContent", require("./router/home_page_content"));
+app.use("/getCategory", require("./router/category"));
 app.use("/users", require("./router/user"));
 
 
