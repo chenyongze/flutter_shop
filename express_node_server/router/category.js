@@ -8,7 +8,7 @@ const config = require("./config")
 
 const common_base_url = "http://" + config.IP + ":" + config.PORT + "/images/";
 
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
 
     var id = req.query.id;
     console.log('hot_goods', "req.query.id  ::: ", id);

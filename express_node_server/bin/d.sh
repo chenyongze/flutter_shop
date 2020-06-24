@@ -10,13 +10,8 @@ dev)
     PUSH_ONLINE_DIST='/app/flutter_shop_base/express_node_server'
     POSTFIX_CMD="cd ${PUSH_ONLINE_DIST}; echo $(date)"
     ;;
-online)
-    PUSH_SSH='root@114.215.24.34'
-    PUSH_ONLINE_DIST='/data/wwwroot/lepai/'
-    POSTFIX_CMD="cd ${PUSH_ONLINE_DIST}; cp .env.online .env ;chmod -R 777 ./runtime; echo $(date)"
-    ;;
 *)
-    echo "Usage: $0 {dev|online}"
+    echo "Usage: $0 {dev}"
     exit 4
     ;;
 esac
