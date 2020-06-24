@@ -43,9 +43,3 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`server runing@http://localhost:${port}`)
 })
-
-// app.get('/', function (req, res) {
-//     res.send('Hello World!')
-// })
-
-// app.listen(3000)
