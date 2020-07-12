@@ -39,10 +39,19 @@ dependencies:
   shared_preferences: ^0.5.7+3
   date_format: ^1.0.8
   jpush_flutter: ^0.5.5
-  
+  wechat_kit: ^1.1.1
+  alipay_kit: ^1.1.0
+  uuid: ">=1.0.0 <3.0.0"
+  json_annotation: ">=2.0.0 <4.0.0"
+  image: ^2.0.7
+  path: ^1.6.4
+  crypto: ^2.0.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  okhttp_kit: ^1.0.0
+  path_provider: ^1.6.11
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
